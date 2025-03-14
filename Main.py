@@ -47,23 +47,23 @@ while True:
                 pyautogui.click()
                 pyautogui.sleep(1)
 
-            if ((landmarks[374].y - landmarks[386].y) < 0.004) and ((left_eye[0].y - left_eye[1].y) > 0.009):
+            elif ((landmarks[374].y - landmarks[386].y) < 0.004) and ((left_eye[0].y - left_eye[1].y) > 0.009):
                 engine.say("right Click")
                 engine.runAndWait()
                 pyautogui.rightClick()
                 pyautogui.sleep(1)
 
-            if landmarks[1].y < 0.3: # Nose Tip
+            elif landmarks[1].y < 0.3: # Nose Tip
                 engine.say("Scroll up")
                 engine.runAndWait()
                 pyautogui.scroll(10) 
 
-            if landmarks[1].y > 0.65:
+            elif landmarks[1].y > 0.65:
                 engine.say("Scroll down")
                 engine.runAndWait()  
                 pyautogui.scroll(-10)
             
-            if (landmarks[14].y - landmarks[13].y) > 0.05:
+            elif (landmarks[14].y - landmarks[13].y) > 0.05:
                 engine.say("Taking Screenshot")
                 engine.runAndWait()
                 pyautogui.screenshot('screenshot.png')
