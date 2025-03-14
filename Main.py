@@ -52,13 +52,12 @@ while True:
                 engine.runAndWait()
                 pyautogui.rightClick()
                 pyautogui.sleep(1)
-
+            
             elif landmarks[1].y < 0.3: # Nose Tip
                 engine.say("Scroll up")
                 engine.runAndWait()
                 pyautogui.scroll(10) 
-
-            elif landmarks[1].y > 0.65:
+            elif landmarks[1].y > 0.69:
                 engine.say("Scroll down")
                 engine.runAndWait()  
                 pyautogui.scroll(-10)
@@ -85,10 +84,10 @@ while True:
             if left_eye_blink and right_eye_blink:
                 if not blink_start_time:
                     blink_start_time = time.time()
-                elif time.time() - blink_start_time < blink_duration_threshold:
+                elif time.time() - blink_start_time > blink_duration_threshold:
                     engine.say("Exiting")
                     engine.runAndWait()
-                    exit(0) # close both of your eyes for exit
+                    exit(0) # close both of your eyes for some time to exit
             else:
                 blink_start_time = None
 
